@@ -33,3 +33,15 @@ func (d Duration) StartAt() time.Time {
 func (d Duration) EndAt() time.Time {
 	return d.endAt
 }
+
+func (d Duration) Equals(other Duration) bool {
+	return d.StartAt() == other.StartAt() && d.EndAt() == other.EndAt()
+}
+
+func (d *Duration) ChnageStartAt(v time.Time) {
+	d.startAt = v
+}
+
+func (d *Duration) ChnageEndAt(v time.Time) {
+	d.endAt = v
+}

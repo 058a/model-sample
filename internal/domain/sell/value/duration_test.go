@@ -80,3 +80,56 @@ func TestNewDuration(t *testing.T) {
 		})
 	}
 }
+
+func TestDuration_Equals(t *testing.T) {
+	// Setup
+	t.Parallel()
+
+	duration1, err := value.NewDuration(time.Now(), time.Now().Add(1*time.Hour))
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	duration2, err := value.NewDuration(time.Now().Add(1*time.Hour), time.Now().Add(2*time.Hour))
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	type args struct {
+		target  value.Duration
+		another value.Duration
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{
+			name: "success",
+			args: args{
+				target:  duration1,
+				another: duration1,
+			},
+			want: true,
+		},
+		{
+			name: "fail",
+			args: args{
+				target:  duration1,
+				another: duration2,
+			},
+			want: false,
+		},
+	}
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			got := tt.args.target.Equals(tt.args.another)
+			if got != tt.want {
+				t.Errorf("Duration.Equals() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

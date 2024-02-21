@@ -1,0 +1,12 @@
+mode: set
+model-sample/internal/domain/sell/value/duration.go:18.62,19.26 1 1
+model-sample/internal/domain/sell/value/duration.go:19.26,21.3 1 1
+model-sample/internal/domain/sell/value/duration.go:23.2,26.8 1 1
+model-sample/internal/domain/sell/value/duration.go:29.39,31.2 1 1
+model-sample/internal/domain/sell/value/duration.go:33.37,35.2 1 1
+model-sample/internal/domain/sell/collection/durations.go:17.66,19.44 1 1
+model-sample/internal/domain/sell/collection/durations.go:19.44,21.3 1 1
+model-sample/internal/domain/sell/collection/durations.go:24.2,24.40 1 1
+model-sample/internal/domain/sell/collection/durations.go:24.40,27.32 3 1
+model-sample/internal/domain/sell/collection/durations.go:27.32,29.4 1 1
+model-sample/internal/domain/sell/collection/durations.go:32.2,34.8 1 1
